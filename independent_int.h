@@ -1,0 +1,4 @@
+#ifndef INDEPENDENT_INT_H
+#define INDEPENDENT_INT_H
+
+#endif //INDEPENDENT_INT_H
