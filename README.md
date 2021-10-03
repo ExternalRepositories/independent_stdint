@@ -1,6 +1,6 @@
 # independent_stdint
 
-C header-only independent std-int library compatible with C++
+C header-only compiler independent std-int library compatible with C++
 
 ## Intent
 
