@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13.0)
 project(independent_stdint VERSION 1.0
         DESCRIPTION "A header only c/c++ library for compiler independent stdint"
-        HOMEPAGE_URL "https://https://github.com/antonkesy/independent_int"
+        HOMEPAGE_URL "https://github.com/antonkesy/independent_stdint"
         )
 
 include(test/CMakeLists.txt)
