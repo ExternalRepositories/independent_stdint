@@ -137,7 +137,7 @@ iuint_8_t fill_iuint_8(const uint8_t* in)
 
 uint8_t get_iuint_8_value(const iuint_8_t* in)
 {
-    get_value_x(uint8_t);
+    get_value_x(uint8_t)
 }
 
 iuint_16_t fill_iuint_16(const uint16_t* in)
