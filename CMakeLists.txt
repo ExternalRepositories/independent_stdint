@@ -4,17 +4,8 @@ project(independent_int VERSION 1.0
         HOMEPAGE_URL "https://https://github.com/antonkesy/independent_int"
         )
 
-#set build to release by default
-#use -DCMAKE_BUILD_TYPE=Debug to run tests
-if (NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif ()
+include(test/CMakeLists.txt)
+include(example/CMakeLists.txt)
 
-#enable testing if cmake is debug
-IF (CMAKE_BUILD_TYPE MATCHES DEBUG)
-    include(test/CMakeLists.txt)
-ENDIF (CMAKE_BUILD_TYPE MATCHES DEBUG)
-
-add_library(independent_int INTERFACE)
-target_sources(independent_int INTERFACE independent_int.h)
-
+add_library(${PROJECT_NAME} INTERFACE)
+target_sources(${PROJECT_NAME} INTERFACE independent_int.h)
