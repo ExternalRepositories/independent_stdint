@@ -1,4 +1,4 @@
-#include "../independent_int.h"
+#include "../independent_stdint.h"
 
 //tests return 0 if correct!
 

@@ -1,4 +1,4 @@
-#include "../independent_int.h"
+#include "../independent_stdint.h"
 
 int main()
 {

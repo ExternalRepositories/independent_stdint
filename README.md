@@ -1,4 +1,4 @@
-# independent_int
+# independent_stdint
 
 C header-only independent std-int library compatible with C++
 
