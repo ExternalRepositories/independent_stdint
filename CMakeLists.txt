@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.13.0)
-project(independent_int VERSION 1.0)
+project(independent_int VERSION 1.0
+        DESCRIPTION "A header only c/c++ library for compiler independent stdint"
+        HOMEPAGE_URL "https://https://github.com/antonkesy/independent_int"
+        )
 
 #set build to release by default
 #use -DCMAKE_BUILD_TYPE=Debug to run tests
