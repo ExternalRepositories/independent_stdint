@@ -6,18 +6,22 @@
 #include <stdlib.h>
 
 #if 43981 != 0xABCD
-#define BIG_ENDIAN_II_H
+#define BIG_ENDIAN_INDINT
 #endif
 
-#define fill_x(x)  x* tmp = (x*) fill_ixint_x(in, sizeof(x));\
+#define fill_x(x) { \
+    x* tmp = (x*) fill_ixint_x(in, sizeof(x));\
     x value = *tmp;\
     free(tmp);\
     return value;\
+    }\
 
-#define get_value(x)  x* tmp = (x*) get_ixint_x_value(in, sizeof(x));\
-x value = *tmp;\
-free(tmp);\
-return value;\
+#define get_value(x)  { \
+    x* tmp = (x*) get_ixint_x_value(in, sizeof(x));\
+    x value = *tmp;\
+    free(tmp);\
+    return value;\
+    }\
 
 typedef union
 {
@@ -75,7 +79,7 @@ void* fill_ixint_x(const void* in, uint8_t size_of_ixint)
         for (size_t i = 0U; i < size_of_ixint; ++i)
         {
             ((uint8_t*) return_value)[i] = ((uint8_t*) in)[
-#ifdef BIG_ENDIAN_II_H
+#ifdef BIG_ENDIAN_INDINT
                     size_of_ixint - i - 1
 #else
                     i
@@ -94,7 +98,7 @@ void* get_ixint_x_value(const void* ixint_in, uint8_t size_of_ixint)
         for (size_t i = 0U; i < size_of_ixint; ++i)
         {
             ((uint8_t*) return_value)[i] = ((uint8_t*) ixint_in)[
-#ifdef BIG_ENDIAN_II_H
+#ifdef BIG_ENDIAN_INDINT
                     size_of_ixint - i - 1
 #else
                     i
