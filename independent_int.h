@@ -1,6 +1,10 @@
 #ifndef INDEPENDENT_INT_H
 #define INDEPENDENT_INT_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -190,4 +194,8 @@ int64_t get_iint_64_value(const iint_64_t* in)
     get_value(int64_t)
 }
 
+#ifdef __cplusplus
+} // closing brace for extern "C"
+
+#endif
 #endif //INDEPENDENT_INT_H
