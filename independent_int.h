@@ -20,58 +20,50 @@ extern "C" {
     return value;\
     }\
 
-#define get_value(x)  { \
+#define get_value_x(x)  { \
     x* tmp = (x*) get_ixint_x_value(in, sizeof(x));\
     x value = *tmp;\
     free(tmp);\
     return value;\
     }\
 
-typedef union
+typedef struct
 {
-    uint8_t get_value;
     uint8_t bytes[1];
 } iuint_8_t;
 
-typedef union
+typedef struct
 {
-    uint16_t get_value;
     uint8_t bytes[2];
 } iuint_16_t;
 
-typedef union
+typedef struct
 {
-    uint32_t get_value;
     uint8_t bytes[4];
 } iuint_32_t;
 
-typedef union
+typedef struct
 {
-    uint64_t get_value;
     uint8_t bytes[8];
 } iuint_64_t;
 
-typedef union
+typedef struct
 {
-    int8_t get_value;
     uint8_t bytes[1];
 } iint_8_t;
 
-typedef union
+typedef struct
 {
-    int16_t get_value;
     uint8_t bytes[2];
 } iint_16_t;
 
-typedef union
+typedef struct
 {
-    int32_t get_value;
     uint8_t bytes[4];
 } iint_32_t;
 
-typedef union
+typedef struct
 {
-    int64_t get_value;
     uint8_t bytes[8];
 } iint_64_t;
 
@@ -121,7 +113,7 @@ iuint_8_t fill_iuint_8(const uint8_t* in)
 
 uint8_t get_iuint_8_value(const iuint_8_t* in)
 {
-    get_value(uint8_t);
+    get_value_x(uint8_t);
 }
 
 iuint_16_t fill_iuint_16(const uint16_t* in)
@@ -131,7 +123,7 @@ iuint_16_t fill_iuint_16(const uint16_t* in)
 
 uint16_t get_iuint_16_value(const iuint_16_t* in)
 {
-    get_value(uint16_t)
+    get_value_x(uint16_t)
 }
 
 iuint_32_t fill_iuint_32(const uint32_t* in)
@@ -141,7 +133,7 @@ iuint_32_t fill_iuint_32(const uint32_t* in)
 
 uint32_t get_iuint_32_value(const iuint_32_t* in)
 {
-    get_value(uint32_t)
+    get_value_x(uint32_t)
 }
 
 iuint_64_t fill_iuint_64(const uint64_t* in)
@@ -151,7 +143,7 @@ iuint_64_t fill_iuint_64(const uint64_t* in)
 
 uint64_t get_iuint_64_value(const iuint_64_t* in)
 {
-    get_value(uint64_t)
+    get_value_x(uint64_t)
 }
 
 iint_8_t fill_iint_8(const int8_t* in)
@@ -161,7 +153,7 @@ iint_8_t fill_iint_8(const int8_t* in)
 
 int8_t get_iint_8_value(const iint_8_t* in)
 {
-    get_value(int8_t)
+    get_value_x(int8_t)
 }
 
 iint_16_t fill_iint_16(const int16_t* in)
@@ -171,7 +163,7 @@ iint_16_t fill_iint_16(const int16_t* in)
 
 int16_t get_iint_16_value(const iint_16_t* in)
 {
-    get_value(int16_t)
+    get_value_x(int16_t)
 }
 
 iint_32_t fill_iint_32(const int32_t* in)
@@ -181,7 +173,7 @@ iint_32_t fill_iint_32(const int32_t* in)
 
 int32_t get_iint_32_value(const iint_32_t* in)
 {
-    get_value(int32_t)
+    get_value_x(int32_t)
 }
 
 iint_64_t fill_iint_64(const int64_t* in)
@@ -191,7 +183,7 @@ iint_64_t fill_iint_64(const int64_t* in)
 
 int64_t get_iint_64_value(const iint_64_t* in)
 {
-    get_value(int64_t)
+    get_value_x(int64_t)
 }
 
 #ifdef __cplusplus
